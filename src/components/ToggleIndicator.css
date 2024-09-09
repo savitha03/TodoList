@@ -1,0 +1,70 @@
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.toggle-icon {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-slider input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #fff; /* Green when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.status-text {
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: red; /* Orange for Pending */
+}
+
+.status-text.complete {
+  color: #fff; /* Green for Complete */
+}
+
+.status-text.pending {
+  color: red; /* Orange for Pending */
+}
